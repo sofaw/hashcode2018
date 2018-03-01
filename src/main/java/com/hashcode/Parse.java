@@ -31,7 +31,7 @@ public class Parse {
                 rides.add(ride);
                 System.out.println(rides.get(i));
             }
-            return new Input(R, C, F, N, B, T);
+            return new Input(R, C, F, N, B, T, rides);
 
         } catch (FileNotFoundException e) {
             System.out.println("No such file: ");

@@ -1,16 +1,20 @@
 package com.hashcode;
 
+import java.util.List;
+
 public class Input {
     int rows, columns, n_vehicles, n_rides, bonus;
     long T;
+    List<Ride> rides;
 
-    public Input(final int rows, final int c, final int nvehicles, final int n, final int b, final long t) {
+    public Input(final int rows, final int c, final int nvehicles, final int n, final int b, final long t, List<Ride> rides) {
         this.rows = rows;
         columns = c;
         n_vehicles = nvehicles;
         n_rides = n;
         bonus = b;
         T = t;
+        this.rides = rides;
     }
 
     public int getRows() {
@@ -59,5 +63,9 @@ public class Input {
 
     public void setT(final long t) {
         T = t;
+    }
+
+    public List<Ride> getRides() {
+        return rides;
     }
 }
