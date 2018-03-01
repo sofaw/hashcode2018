@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 public class Scheduler {
 
     private static List<Vehicle> vehicles;
-    private static Queue<Ride> rides;
+    private static Deque<Ride> rides;
 
     public static void schedule(final String filepath, final String outputName) {
         final Input input = Parse.parseInput(filepath);
@@ -26,7 +26,6 @@ public class Scheduler {
         vehicles.forEach(v -> v.addRide(getNextRide()));
 
         // Sort vehicles by finish time
-
         int i = 0;
         // assign remaining rides
         while(!rides.isEmpty()) {
@@ -74,7 +73,7 @@ public class Scheduler {
 
     private static Ride getNextRide() {
         //get next item in queue
-        return rides.remove();
+        return rides.removeFirst();
     }
 
     public static void output(final List<Vehicle> vehicles, String name) {

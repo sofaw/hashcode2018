@@ -1,12 +1,15 @@
 package com.hashcode;
 
+import java.util.Deque;
 import java.util.LinkedList;
 import java.util.Objects;
-import java.util.Queue;
+import java.util.concurrent.DelayQueue;
 
 public class Vehicle {
     int id;
-    Queue<Ride> rides;
+    Deque<Ride> rides;
+
+    // Patrick's stuff
     Ride currentRide;
     boolean passengersRiding;
     Coordinate current_location;
@@ -26,11 +29,11 @@ public class Vehicle {
         this.id = id;
     }
 
-    public Queue<Ride> getRides() {
+    public Deque<Ride> getRides() {
         return rides;
     }
 
-    public void setRides(final Queue<Ride> rides) {
+    public void setRides(final Deque<Ride> rides) {
         this.rides = rides;
     }
 
@@ -51,7 +54,7 @@ public class Vehicle {
         currentRide = null;
     }
 
-    public void step(final Queue<Ride> rides) {
+    public void step(final Deque<Ride> rides) {
         if (!Objects.isNull(currentRide)) {
             if (passengersRiding) {
                 //on the way to final destination
@@ -79,7 +82,7 @@ public class Vehicle {
                     current_location.setRow(diff.getRow() < 0 ? current_location.getRow() - 1 : current_location.getRow() + 1);
                 } else if (current_location.equals(currentRide.getPasssengerDestination())) {
                     passengersRiding = false;
-                    currentRide = rides.remove();
+                    currentRide = rides.removeFirst();
                     this.rides.add(currentRide);
                 }
             }
