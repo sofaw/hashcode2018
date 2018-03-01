@@ -2,7 +2,6 @@ package com.hashcode;
 
 import javafx.util.Pair;
 
-import java.util.List;
 import java.util.Queue;
 
 public class Vehicle {
