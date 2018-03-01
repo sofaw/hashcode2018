@@ -1,6 +1,8 @@
 package com.hashcode;
 
 public class Ride {
+	private int id;
+
 	private int s; // Earliest start
 	private int f; // Latest finish
 	
@@ -9,7 +11,8 @@ public class Ride {
 	private int x; // Row of finish intersection
 	private int y; // Column of finish intersection
 	
-	public Ride(int a,int b,int x,int y, int s,int f) {
+	public Ride(int id, int a,int b,int x,int y, int s,int f) {
+		this.id=id;
 		this.a=a;
 		this.b=b;
 		this.x=x;
@@ -58,5 +61,11 @@ public class Ride {
 	}
 	public void setY(int y) {
 		this.y = y;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 }
