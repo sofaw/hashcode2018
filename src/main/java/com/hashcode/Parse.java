@@ -41,7 +41,4 @@ public class Parse {
 			System.out.println("Exception thrown: Invalid input file.");
 			System.exit(-1);
 		}
-
-	}
-
 }
