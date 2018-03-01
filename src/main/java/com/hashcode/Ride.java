@@ -24,7 +24,7 @@ public class Ride {
 	}
 
 	public void printRide() {
-		System.out.print("[" + a + "," + b + "] " + "[" + x + "," + y + "] "+ s + " " + f + "\n");
+		System.out.print("Id: " + id + " [" + a + "," + b + "] " + "[" + x + "," + y + "] "+ s + " " + f + "\n");
 	}
 	
 	
