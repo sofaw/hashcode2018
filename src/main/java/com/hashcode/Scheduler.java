@@ -1,5 +1,8 @@
 package com.hashcode;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -8,7 +11,7 @@ public class Scheduler {
     private static List<Vehicle> vehicles;
     private static Queue<Ride> rides;
 
-    public static void schedule(final String filepath) {
+    public static void schedule(final String filepath, final String outputName) {
         final Input input = Parse.parseInput(filepath);
         if (input != null) {
             vehicles = createVehicles(input);
@@ -29,7 +32,7 @@ public class Scheduler {
         }
 
         //TODO output
-        output(vehicles);
+        output(vehicles, outputName);
 
     }
 
@@ -38,8 +41,19 @@ public class Scheduler {
         return rides.remove();
     }
 
-    private static void output(final List<Vehicle> vehicles) {
+    public static void output(final List<Vehicle> vehicles, String name) {
+        try {
+            PrintWriter out = new PrintWriter(new FileWriter("output_" + name + ".out"));
+            for (final Vehicle vehicle : vehicles) {
 
+                final StringBuilder builder = new StringBuilder().append(vehicle.rides.size());
+                vehicle.getRides().forEach(ride-> builder.append(" ").append(ride.getId()));
+                out.println(builder.toString());
+            }
+            out.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private static List<Vehicle> createVehicles(Input input) {
