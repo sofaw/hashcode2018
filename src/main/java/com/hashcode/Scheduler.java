@@ -41,6 +41,37 @@ public class Scheduler {
 
     }
 
+    public static void scheduleWithSimulation(final String filepath, final String outputName) {
+        final Input input = Parse.parseInput(filepath);
+        if (input != null) {
+            vehicles = createVehicles(input);
+            // Sort by earliest start time
+            rides = new LinkedList<>(sortByStartTime(input.getRides()));
+            for(Ride ride : rides) {
+                System.out.println(ride);
+            }
+        }
+
+        // assign first rides to cars
+        vehicles.forEach(v -> v.addRide(getNextRide()));
+
+        // Sort vehicles by finish time
+        //vehicles.stream().sorted(Comparator.comparing(v -> v.getRides().getLast())).collect(Collectors.toList())
+
+        int i = 0;
+        // assign remaining rides
+        while(!rides.isEmpty()) {
+            vehicles.get(i).addRide(getNextRide());
+            i++;
+            if(i >= vehicles.size()) {
+                i = 0;
+            }
+        }
+
+        output(vehicles, outputName);
+
+    }
+
     private static Ride getNextRide() {
         //get next item in queue
         return rides.remove();

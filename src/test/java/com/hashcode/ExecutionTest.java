@@ -36,6 +36,33 @@ public class ExecutionTest {
     }
 
     @Test
+    public void runa_sim(){
+        Scheduler.schedule("src/main/resources/a_example.in", "As");
+    }
+
+
+    @Test
+    public void runb_sim(){
+        Scheduler.schedule("src/main/resources/b_should_be_easy.in", "Bs");
+    }
+
+
+    @Test
+    public void runc_sim(){
+        Scheduler.schedule("src/main/resources/c_no_hurry.in", "Cs");
+    }
+
+    @Test
+    public void rund_sim() {
+        Scheduler.schedule("src/main/resources/d_metropolis.in", "Ds");
+    }
+
+    @Test
+    public void rune_sim() {
+        Scheduler.schedule("src/main/resources/e_high_bonus.in", "Es");
+    }
+
+    @Test
     public void testOutput() {
 
         final Vehicle vehicle1 = new Vehicle(1);
