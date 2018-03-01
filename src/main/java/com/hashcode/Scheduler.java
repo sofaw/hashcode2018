@@ -26,7 +26,6 @@ public class Scheduler {
         vehicles.forEach(v -> v.addRide(getNextRide()));
 
         // Sort vehicles by finish time
-        //vehicles.stream().sorted(Comparator.comparing(v -> v.getRides().getLast())).collect(Collectors.toList())
 
         int i = 0;
         // assign remaining rides
