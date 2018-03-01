@@ -45,7 +45,7 @@ public class Scheduler {
             PrintWriter out = new PrintWriter(new FileWriter("output_" + name + ".out"));
             for (final Vehicle vehicle : vehicles) {
 
-                final StringBuilder builder = new StringBuilder().append(vehicle.id);
+                final StringBuilder builder = new StringBuilder().append(vehicle.rides.size());
                 vehicle.getRides().forEach(ride-> builder.append(" ").append(ride.getId()));
                 out.println(builder.toString());
             }
