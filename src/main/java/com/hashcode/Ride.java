@@ -3,66 +3,66 @@ package com.hashcode;
 public class Ride {
 	private int id;
 
-	private int s; // Earliest start
-	private int f; // Latest finish
+	private int earliestStart; // Earliest start
+	private int latestFinish; // Latest finish
 	
-	private int a; // Row of start intersection
-	private int b; // Column of start intersection
-	private int x; // Row of finish intersection
-	private int y; // Column of finish intersection
+	private int startRow; // Row of start intersection
+	private int startColumn; // Column of start intersection
+	private int finishRow; // Row of finish intersection
+	private int finishColumn; // Column of finish intersection
 
 	private int distance;
 	
-	public Ride(int id, int a,int b,int x,int y, int s,int f) {
+	public Ride(int id, int startRow, int startColumn, int x, int y, int earliestStart, int latestFinish) {
 		this.id=id;
-		this.a=a;
-		this.b=b;
-		this.x=x;
-		this.y=y;
-		this.s=s;
-		this.f=f;
+		this.startRow = startRow;
+		this.startColumn = startColumn;
+		this.finishRow =x;
+		this.finishColumn =y;
+		this.earliestStart = earliestStart;
+		this.latestFinish = latestFinish;
 	}
 
 	public void printRide() {
-		System.out.print("Id: " + id + " [" + a + "," + b + "] " + "[" + x + "," + y + "] "+ s + " " + f + "\n");
+		System.out.print("Id: " + id + " [" + startRow + "," + startColumn + "] " + "[" + finishRow + "," + finishColumn + "] "+ earliestStart + " " + latestFinish + "\n");
 	}
 	
 	
-	public int getS() {
-		return s;
+	public int getEarliestStart() {
+		return earliestStart;
 	}
-	public void setS(int s) {
-		this.s = s;
+	public void setEarliestStart(int earliestStart) {
+		this.earliestStart = earliestStart;
 	}
-	public int getF() {
-		return f;
+	public int getLatestFinish() {
+		return latestFinish;
 	}
-	public void setF(int f) {
-		this.f = f;
+	public void setLatestFinish(int latestFinish) {
+		this.latestFinish = latestFinish;
 	}
-	public int getA() {
-		return a;
+	public int getStartRow() {
+		return startRow;
 	}
-	public void setA(int a) {
-		this.a = a;
+	public void setStartRow(int startRow) {
+		this.startRow = startRow;
 	}
-	public int getB() {
-		return b;
+	public int getStartColumn() {
+		return startColumn;
 	}
-	public void setB(int b) {
-		this.b = b;
+	public void setStartColumn(int startColumn) {
+		this.startColumn = startColumn;
 	}
-	public int getX() {
-		return x;
+	public int getFinishRow() {
+		return finishRow;
 	}
-	public void setX(int x) {
-		this.x = x;
+	public void setFinishRow(int finishRow) {
+		this.finishRow = finishRow;
 	}
-	public int getY() {
-		return y;
+	public int getFinishColumn() {
+		return finishColumn;
 	}
-	public void setY(int y) {
-		this.y = y;
+	public void setFinishColumn(int finishColumn) {
+		this.finishColumn = finishColumn;
 	}
 	public int getId() {
 		return id;
@@ -83,6 +83,14 @@ public class Ride {
 
 	@Override
 	public String toString() {
-		return "Ride Id: " + id + " [" + a + "," + b + "] " + "[" + x + "," + y + "] "+ s + " " + f ;
+		return "Ride Id: " + id + " [" + startRow + "," + startColumn + "] " + "[" + finishRow + "," + finishColumn + "] "+ earliestStart + " " + latestFinish;
+	}
+
+	public Coordinate getFinalDestination() {
+		return new Coordinate(finishRow, finishColumn);
+	}
+
+	public Coordinate getPasssengerDestination() {
+		return new Coordinate(startRow, startColumn);
 	}
 }
