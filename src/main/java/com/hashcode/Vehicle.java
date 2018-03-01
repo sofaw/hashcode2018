@@ -1,18 +1,16 @@
 package com.hashcode;
 
-import javafx.util.Pair;
-
-import java.util.PriorityQueue;
-import java.util.Queue;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Vehicle {
     int id;
-    Queue<Ride> rides;
+    List<Ride> rides;
     Coordinate current_location;
 
     public Vehicle(final int id) {
         this.id = id;
-        rides = new PriorityQueue<>();
+        rides = new ArrayList<>();
         current_location = new Coordinate(0,0);
     }
 
@@ -24,11 +22,11 @@ public class Vehicle {
         this.id = id;
     }
 
-    public Queue<Ride> getRides() {
+    public List<Ride> getRides() {
         return rides;
     }
 
-    public void setRides(final Queue<Ride> rides) {
+    public void setRides(final List<Ride> rides) {
         this.rides = rides;
     }
 
@@ -38,5 +36,9 @@ public class Vehicle {
 
     public void setCurrent_location(final Coordinate current_location) {
         this.current_location = current_location;
+    }
+
+    public void addRide(Ride ride) {
+        rides.add(ride);
     }
 }
