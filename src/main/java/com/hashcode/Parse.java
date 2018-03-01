@@ -63,7 +63,7 @@ public class Parse {
                 String[] values2 = line.split(" ");
                 Ride ride = new Ride(Integer.parseInt(values2[0]), Integer.parseInt(values2[1]), Integer.parseInt(values2[2]), Integer.parseInt(values2[3]), Integer.parseInt(values2[4]), Integer.parseInt(values2[5]));
                 rides.add(ride);
-                System.out.println(rides.get(i));
+                rides.get(i).printRide();
             }
 
 
@@ -74,7 +74,5 @@ public class Parse {
             System.out.println("Exception thrown: Invalid input file.");
             System.exit(-1);
         }
-
     }
-
 }

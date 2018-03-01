@@ -17,6 +17,10 @@ public class Ride {
 		this.s=s;
 		this.f=f;
 	}
+
+	public void printRide() {
+		System.out.print("[" + a + "," + b + "] " + "[" + x + "," + y + "] "+ s + " " + f + "\n");
+	}
 	
 	
 	public int getS() {
