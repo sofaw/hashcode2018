@@ -2,14 +2,18 @@ package com.hashcode;
 
 import javafx.util.Pair;
 
+import java.util.PriorityQueue;
 import java.util.Queue;
 
 public class Vehicle {
     int id;
     Queue<Ride> rides;
-    Pair<Integer, Integer> currentLocation;
+    Coordinate current_location;
 
-    public Vehicle() {
+    public Vehicle(final int id) {
+        this.id = id;
+        rides = new PriorityQueue<>();
+        current_location = new Coordinate(0,0);
     }
 
     public int getId() {
@@ -28,11 +32,11 @@ public class Vehicle {
         this.rides = rides;
     }
 
-    public Pair<Integer, Integer> getCurrentLocation() {
-        return currentLocation;
+    public Coordinate getCurrent_location() {
+        return current_location;
     }
 
-    public void setCurrentLocation(final Pair<Integer, Integer> currentLocation) {
-        this.currentLocation = currentLocation;
+    public void setCurrent_location(final Coordinate current_location) {
+        this.current_location = current_location;
     }
 }

@@ -1,56 +1,56 @@
 package com.hashcode;
 
 public class Input {
-    int R, C, F, N, B;
+    int rows, columns, n_vehicles, n_rides, bonus;
     long T;
 
-    public Input(final int r, final int c, final int f, final int n, final int b, final long t) {
-        R = r;
-        C = c;
-        F = f;
-        N = n;
-        B = b;
+    public Input(final int rows, final int c, final int nvehicles, final int n, final int b, final long t) {
+        this.rows = rows;
+        columns = c;
+        n_vehicles = nvehicles;
+        n_rides = n;
+        bonus = b;
         T = t;
     }
 
-    public int getR() {
-        return R;
+    public int getRows() {
+        return rows;
     }
 
-    public void setR(final int r) {
-        R = r;
+    public void setRows(final int rows) {
+        this.rows = rows;
     }
 
-    public int getC() {
-        return C;
+    public int getColumns() {
+        return columns;
     }
 
-    public void setC(final int c) {
-        C = c;
+    public void setColumns(final int columns) {
+        this.columns = columns;
     }
 
-    public int getF() {
-        return F;
+    public int getN_vehicles() {
+        return n_vehicles;
     }
 
-    public void setF(final int f) {
-        F = f;
+    public void setN_vehicles(final int n_vehicles) {
+        this.n_vehicles = n_vehicles;
     }
 
-    public int getN() {
-        return N;
+    public int getN_rides() {
+        return n_rides;
     }
 
-    public void setN(final int n) {
-        N = n;
+    public void setN_rides(final int n_rides) {
+        this.n_rides = n_rides;
     }
 
-    public int getB() {
-        return B;
+    public int getBonus() {
+        return bonus;
     }
 
-    public void setB(final int b) {
-        B = b;
+    public void setBonus(final int bonus) {
+        this.bonus = bonus;
     }
 
     public long getT() {
