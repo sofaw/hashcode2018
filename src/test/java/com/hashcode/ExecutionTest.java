@@ -10,29 +10,29 @@ public class ExecutionTest {
 
     @Test
     public void runa(){
-        Parse.parse("src/main/resources/a_example.in");
+        Scheduler.schedule("src/main/resources/a_example.in");
     }
 
 
     @Test
     public void runb(){
-        Scheduler.schedule("");
+        Scheduler.schedule("src/main/resources/b_should_be_easy.in");
     }
 
 
     @Test
     public void runc(){
-        Scheduler.schedule("");
+        Scheduler.schedule("src/main/resources/c_no_hurry.in");
     }
 
     @Test
     public void rund() {
-        Scheduler.schedule("");
+        Scheduler.schedule("src/main/resources/d_metropolis.in");
     }
 
     @Test
     public void rune() {
-        Scheduler.schedule("");
+        Scheduler.schedule("src/main/resources/e_high_bonus.in");
     }
 
     @Test

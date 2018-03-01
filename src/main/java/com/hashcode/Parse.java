@@ -29,7 +29,7 @@ public class Parse {
                 String[] values2 = line.split(" ");
                 Ride ride = new Ride(i, Integer.parseInt(values2[0]), Integer.parseInt(values2[1]), Integer.parseInt(values2[2]), Integer.parseInt(values2[3]), Integer.parseInt(values2[4]), Integer.parseInt(values2[5]));
                 rides.add(ride);
-                System.out.println(rides.get(i));
+                //System.out.println(rides.get(i));
             }
             return new Input(R, C, F, N, B, T, rides);
 

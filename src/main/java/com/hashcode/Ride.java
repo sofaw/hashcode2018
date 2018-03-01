@@ -83,6 +83,6 @@ public class Ride {
 
 	@Override
 	public String toString() {
-		return "Ride [a=" + a + ", b=" + b + ", x=" + x + ", y=" + y + ", s=" + s + ", f=" + f + "]";
+		return "Ride Id: " + id + " [" + a + "," + b + "] " + "[" + x + "," + y + "] "+ s + " " + f ;
 	}
 }

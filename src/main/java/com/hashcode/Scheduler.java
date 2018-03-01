@@ -3,9 +3,8 @@ package com.hashcode;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Scheduler {
 
@@ -16,7 +15,11 @@ public class Scheduler {
         final Input input = Parse.parseInput(filepath);
         if (input != null) {
             vehicles = createVehicles(input);
-            //TODO sort rides here! and populate queue
+            // Sort by earliest start time
+            rides = new LinkedList<>(sortByStartTime(input.getRides()));
+            for(Ride ride : rides) {
+                System.out.println(ride);
+            }
         }
 
         //assign first rides to cars
@@ -60,7 +63,9 @@ public class Scheduler {
         return vehicles;
     }
 
-
+    private static List<Ride> sortByStartTime(List<Ride> inRides) {
+        return inRides.stream().sorted(Comparator.comparing(Ride::getS)).collect(Collectors.toList());
+    }
 
 
 }
