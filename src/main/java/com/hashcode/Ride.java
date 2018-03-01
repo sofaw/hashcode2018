@@ -10,6 +10,8 @@ public class Ride {
 	private int b; // Column of start intersection
 	private int x; // Row of finish intersection
 	private int y; // Column of finish intersection
+
+	private int distance;
 	
 	public Ride(int id, int a,int b,int x,int y, int s,int f) {
 		this.id=id;
@@ -67,5 +69,20 @@ public class Ride {
 	}
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public int getDistance() {
+		return distance;
+	}
+
+
+	public void setDistance(int distance) {
+		this.distance = distance;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Ride [a=" + a + ", b=" + b + ", x=" + x + ", y=" + y + ", s=" + s + ", f=" + f + "]";
 	}
 }
