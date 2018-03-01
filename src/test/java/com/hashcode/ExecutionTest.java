@@ -10,29 +10,29 @@ public class ExecutionTest {
 
     @Test
     public void runa(){
-        Scheduler.schedule("src/main/resources/a_example.in");
+        Scheduler.schedule("src/main/resources/a_example.in", "A");
     }
 
 
     @Test
     public void runb(){
-        Scheduler.schedule("src/main/resources/b_should_be_easy.in");
+        Scheduler.schedule("src/main/resources/b_should_be_easy.in", "B");
     }
 
 
     @Test
     public void runc(){
-        Scheduler.schedule("src/main/resources/c_no_hurry.in");
+        Scheduler.schedule("src/main/resources/c_no_hurry.in", "C");
     }
 
     @Test
     public void rund() {
-        Scheduler.schedule("src/main/resources/d_metropolis.in");
+        Scheduler.schedule("src/main/resources/d_metropolis.in", "D");
     }
 
     @Test
     public void rune() {
-        Scheduler.schedule("src/main/resources/e_high_bonus.in");
+        Scheduler.schedule("src/main/resources/e_high_bonus.in", "E");
     }
 
     @Test
@@ -51,7 +51,7 @@ public class ExecutionTest {
         final ArrayList<Vehicle> vehicles = new ArrayList<>();
         vehicles.add(vehicle1);
         vehicles.add(vehicle2);
-        Scheduler.output(vehicles);
+        Scheduler.output(vehicles, "whatever");
 
     }
 

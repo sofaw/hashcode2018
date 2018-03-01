@@ -11,7 +11,7 @@ public class Scheduler {
     private static List<Vehicle> vehicles;
     private static Queue<Ride> rides;
 
-    public static void schedule(final String filepath) {
+    public static void schedule(final String filepath, final String outputName) {
         final Input input = Parse.parseInput(filepath);
         if (input != null) {
             vehicles = createVehicles(input);
@@ -31,7 +31,7 @@ public class Scheduler {
         }
 
         //TODO output
-        output(vehicles, "");
+        output(vehicles, outputName);
 
     }
 
