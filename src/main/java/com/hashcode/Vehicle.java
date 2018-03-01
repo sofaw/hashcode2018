@@ -2,10 +2,16 @@ package com.hashcode;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.Objects;
+import java.util.concurrent.DelayQueue;
 
 public class Vehicle {
     int id;
-    Queue<Ride> rides;
+    Deque<Ride> rides;
+
+    // Patrick's stuff
     Ride currentRide;
     boolean passengersRiding;
     Coordinate current_location;
@@ -25,11 +31,11 @@ public class Vehicle {
         this.id = id;
     }
 
-    public Queue<Ride> getRides() {
+    public Deque<Ride> getRides() {
         return rides;
     }
 
-    public void setRides(final Queue<Ride> rides) {
+    public void setRides(final Deque<Ride> rides) {
         this.rides = rides;
     }
 
