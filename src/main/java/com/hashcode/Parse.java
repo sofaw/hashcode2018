@@ -27,7 +27,7 @@ public class Parse {
             for (int i = 0; i <= N - 1; i++) {
                 line = br.readLine();
                 String[] values2 = line.split(" ");
-                Ride ride = new Ride(Integer.parseInt(values2[0]), Integer.parseInt(values2[1]), Integer.parseInt(values2[2]), Integer.parseInt(values2[3]), Integer.parseInt(values2[4]), Integer.parseInt(values2[5]));
+                Ride ride = new Ride(i, Integer.parseInt(values2[0]), Integer.parseInt(values2[1]), Integer.parseInt(values2[2]), Integer.parseInt(values2[3]), Integer.parseInt(values2[4]), Integer.parseInt(values2[5]));
                 rides.add(ride);
                 System.out.println(rides.get(i));
             }
