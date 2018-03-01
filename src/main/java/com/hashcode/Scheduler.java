@@ -59,16 +59,10 @@ public class Scheduler {
         // Sort vehicles by finish time
         //vehicles.stream().sorted(Comparator.comparing(v -> v.getRides().getLast())).collect(Collectors.toList())
 
-        int i = 0;
-        // assign remaining rides
-        while(!rides.isEmpty()) {
-            vehicles.get(i).addRide(getNextRide());
-            i++;
-            if(i >= vehicles.size()) {
-                i = 0;
-            }
+        final List<Ride> rideList = new ArrayList<>(rides);
+        for (int i = 0; i < input.T; i++) {
+            vehicles.forEach(vehicle -> vehicle.step(rideList));
         }
-
         output(vehicles, outputName);
 
     }
