@@ -1,4 +1,4 @@
-package entities;
+package com.hashcode;
 
 public class Ride {
 	private int s; // Earliest start
