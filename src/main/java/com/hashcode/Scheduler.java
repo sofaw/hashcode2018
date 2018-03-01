@@ -64,7 +64,7 @@ public class Scheduler {
     }
 
     private static List<Ride> sortByStartTime(List<Ride> inRides) {
-        return inRides.stream().sorted(Comparator.comparing(Ride::getS)).collect(Collectors.toList());
+        return inRides.stream().sorted(Comparator.comparing(Ride::getEarliestStart)).collect(Collectors.toList());
     }
 
 
