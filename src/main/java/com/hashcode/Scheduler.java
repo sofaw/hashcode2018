@@ -22,16 +22,22 @@ public class Scheduler {
             }
         }
 
-        //assign first rides to cars
+        // assign first rides to cars
         vehicles.forEach(v -> v.addRide(getNextRide()));
 
-        //for loop
-        for (int i = 0; i < input.T; i++) {
+        // Sort vehicles by finish time
+        //vehicles.stream().sorted(Comparator.comparing(v -> v.getRides().getLast())).collect(Collectors.toList())
 
-
+        int i = 0;
+        // assign remaining rides
+        while(!rides.isEmpty()) {
+            vehicles.get(i).addRide(getNextRide());
+            i++;
+            if(i >= vehicles.size()) {
+                i = 0;
+            }
         }
 
-        //TODO output
         output(vehicles, outputName);
 
     }
@@ -58,7 +64,7 @@ public class Scheduler {
 
     private static List<Vehicle> createVehicles(Input input) {
         final ArrayList<Vehicle> vehicles = new ArrayList<>();
-        for (int i = 0; i < input.n_rides; i++) {
+        for (int i = 0; i < input.getN_vehicles(); i++) {
             vehicles.add(new Vehicle(i + 1));
         }
         return vehicles;
@@ -66,6 +72,11 @@ public class Scheduler {
 
     private static List<Ride> sortByStartTime(List<Ride> inRides) {
         return inRides.stream().sorted(Comparator.comparing(Ride::getS)).collect(Collectors.toList());
+    }
+
+    private static List<Ride> sortByDist(List<Ride> inRides) {
+        Collections.sort(inRides, (o1, o2) -> o2.getDistance() - o1.getDistance());
+        return inRides;
     }
 
 

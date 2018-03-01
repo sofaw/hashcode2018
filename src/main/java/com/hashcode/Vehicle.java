@@ -1,16 +1,18 @@
 package com.hashcode;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 public class Vehicle {
     int id;
-    List<Ride> rides;
+    Queue<Ride> rides;
     Coordinate current_location;
 
     public Vehicle(final int id) {
         this.id = id;
-        rides = new ArrayList<>();
+        rides = new LinkedList<>();
         current_location = new Coordinate(0,0);
     }
 
@@ -22,11 +24,11 @@ public class Vehicle {
         this.id = id;
     }
 
-    public List<Ride> getRides() {
+    public Queue<Ride> getRides() {
         return rides;
     }
 
-    public void setRides(final List<Ride> rides) {
+    public void setRides(final Queue<Ride> rides) {
         this.rides = rides;
     }
 
