@@ -6,7 +6,7 @@ public class ExecutionTest {
 
     @Test
     public void runa(){
-        Parse.parse("src/main/resources/a_example.in");
+        Scheduler.schedule("src/main/resources/a_example.in");
     }
 
 
